@@ -98,7 +98,6 @@ int main(void)
 	  	  HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, state);
 	      HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, 1- state);
 	      HAL_Delay(2000);
-
 //	      HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, 1 - state);
 //	      HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, state);
 //	      HAL_Delay(2000);
