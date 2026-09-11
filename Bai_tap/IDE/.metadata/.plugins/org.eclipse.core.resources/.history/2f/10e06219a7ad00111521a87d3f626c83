@@ -107,43 +107,22 @@ int main(void)
 	  a=0,b=0,c=0,d=0,e=0,f=0,g=0;
 	  switch(num){
 	  case 0 :
-		  g = 1;
+		  g=1;
 		  break;
 	  case 1 :
-		  a = f = g = e = d = 1;
-		  break;
-	  case 2 :
-		  f = c = 1;
-		  break;
-	  case 3 :
-		  f = e = 1;
-		  break;
-	  case 4 :
-		  a = e = d = 1;
-		  break;
-	  case 5 :
-		  b = e = 1;
-		  break;
-	  case 6 :
-		  b = 1;
-		  break;
-	  case 7 :
-		  f = g = e = d = 1;
-		  break;
-	  case 8 :
-		  break;
-	  case 9 :
-		  e = 1;
+		  g=0;
+		  a=1;
+		  b=1;
 		  break;
 
 	  }
-	  HAL_GPIO_WritePin(a_GPIO_Port, a_Pin, a);
-	  HAL_GPIO_WritePin(b_GPIO_Port, b_Pin, b);
-	  HAL_GPIO_WritePin(c_GPIO_Port, c_Pin, c);
-	  HAL_GPIO_WritePin(d_GPIO_Port, d_Pin, d);
-	  HAL_GPIO_WritePin(e_GPIO_Port, e_Pin, e);
-	  HAL_GPIO_WritePin(f_GPIO_Port, f_Pin, f);
-	  HAL_GPIO_WritePin(g_GPIO_Port, g_Pin, g);
+	  HAL_GPIO_WritePin(a_Port, a_Pin, a);
+	  HAL_GPIO_WritePin(b_Port, b_Pin, b);
+	  HAL_GPIO_WritePin(c_Port, c_Pin, c);
+	  HAL_GPIO_WritePin(d_Port, d_Pin, d);
+	  HAL_GPIO_WritePin(e_Port, e_Pin, e);
+	  HAL_GPIO_WritePin(f_Port, f_Pin, f);
+	  HAL_GPIO_WritePin(g_Port, g_Pin, g);
   }
   while (1)
   {
