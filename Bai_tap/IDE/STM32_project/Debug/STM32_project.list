@@ -39,11 +39,11 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  17 .debug_line   000048df  00000000  00000000  00039b30  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    000798cd  00000000  00000000  0003e40f  2**0
+ 18 .debug_str    000798cf  00000000  00000000  0003e40f  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000053  00000000  00000000  000b7cdc  2**0
+ 19 .comment      00000053  00000000  00000000  000b7cde  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  00000d30  00000000  00000000  000b7d30  2**2
+ 20 .debug_frame  00000d30  00000000  00000000  000b7d34  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -134,8 +134,8 @@ int main(void)
  8000176:	2300      	movs	r3, #0
  8000178:	613b      	str	r3, [r7, #16]
   while (1)
-  {
-  	  HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, 1-red_state);
+    {
+        HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, 1-red_state);
  800017a:	69fb      	ldr	r3, [r7, #28]
  800017c:	b2db      	uxtb	r3, r3
  800017e:	f1c3 0301 	rsb	r3, r3, #1
@@ -144,7 +144,7 @@ int main(void)
  8000186:	2120      	movs	r1, #32
  8000188:	4829      	ldr	r0, [pc, #164]	; (8000230 <main+0xe4>)
  800018a:	f000 fc31 	bl	80009f0 <HAL_GPIO_WritePin>
-      HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, 1-yellow_state);
+        HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, 1-yellow_state);
  800018e:	69bb      	ldr	r3, [r7, #24]
  8000190:	b2db      	uxtb	r3, r3
  8000192:	f1c3 0301 	rsb	r3, r3, #1
@@ -153,7 +153,7 @@ int main(void)
  800019a:	2140      	movs	r1, #64	; 0x40
  800019c:	4824      	ldr	r0, [pc, #144]	; (8000230 <main+0xe4>)
  800019e:	f000 fc27 	bl	80009f0 <HAL_GPIO_WritePin>
-      HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, 1-green_state);
+        HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, 1-green_state);
  80001a2:	697b      	ldr	r3, [r7, #20]
  80001a4:	b2db      	uxtb	r3, r3
  80001a6:	f1c3 0301 	rsb	r3, r3, #1
@@ -162,7 +162,7 @@ int main(void)
  80001ae:	2180      	movs	r1, #128	; 0x80
  80001b0:	481f      	ldr	r0, [pc, #124]	; (8000230 <main+0xe4>)
  80001b2:	f000 fc1d 	bl	80009f0 <HAL_GPIO_WritePin>
-      HAL_Delay((red_dur * red_state + yellow_dur * yellow_state + green_dur*green_state)*1000);
+        HAL_Delay((red_dur*red_state + yellow_dur*yellow_state + green_dur*green_state)*1000);
  80001b6:	68fb      	ldr	r3, [r7, #12]
  80001b8:	69fa      	ldr	r2, [r7, #28]
  80001ba:	fb02 f203 	mul.w	r2, r2, r3
@@ -178,52 +178,52 @@ int main(void)
  80001d6:	fb02 f303 	mul.w	r3, r2, r3
  80001da:	4618      	mov	r0, r3
  80001dc:	f000 f986 	bl	80004ec <HAL_Delay>
-      if(count == 0){
+        if(count == 0){
  80001e0:	693b      	ldr	r3, [r7, #16]
  80001e2:	2b00      	cmp	r3, #0
  80001e4:	d108      	bne.n	80001f8 <main+0xac>
-    	  red_state = 1 - red_state;
+      	  red_state = 1 - red_state;
  80001e6:	69fb      	ldr	r3, [r7, #28]
  80001e8:	f1c3 0301 	rsb	r3, r3, #1
  80001ec:	61fb      	str	r3, [r7, #28]
-    	  yellow_state = 1 - yellow_state;
- 80001ee:	69bb      	ldr	r3, [r7, #24]
+      	  green_state = 1 - green_state;
+ 80001ee:	697b      	ldr	r3, [r7, #20]
  80001f0:	f1c3 0301 	rsb	r3, r3, #1
- 80001f4:	61bb      	str	r3, [r7, #24]
+ 80001f4:	617b      	str	r3, [r7, #20]
  80001f6:	e016      	b.n	8000226 <main+0xda>
-      }
-      else if(count == 1){
+        }
+        else if(count == 1){
  80001f8:	693b      	ldr	r3, [r7, #16]
  80001fa:	2b01      	cmp	r3, #1
  80001fc:	d108      	bne.n	8000210 <main+0xc4>
-    	  yellow_state = 1 - yellow_state;
+      	  yellow_state = 1 - yellow_state;
  80001fe:	69bb      	ldr	r3, [r7, #24]
  8000200:	f1c3 0301 	rsb	r3, r3, #1
  8000204:	61bb      	str	r3, [r7, #24]
-    	  green_state = 1 - green_state;
+      	  green_state = 1 - green_state;
  8000206:	697b      	ldr	r3, [r7, #20]
  8000208:	f1c3 0301 	rsb	r3, r3, #1
  800020c:	617b      	str	r3, [r7, #20]
  800020e:	e00a      	b.n	8000226 <main+0xda>
-      }
-      else{
-    	  green_state = 1 - green_state;
- 8000210:	697b      	ldr	r3, [r7, #20]
+        }
+        else{
+      	  yellow_state = 1 - yellow_state;
+ 8000210:	69bb      	ldr	r3, [r7, #24]
  8000212:	f1c3 0301 	rsb	r3, r3, #1
- 8000216:	617b      	str	r3, [r7, #20]
-    	  red_state = 1 - red_state;
+ 8000216:	61bb      	str	r3, [r7, #24]
+      	  red_state = 1 - red_state;
  8000218:	69fb      	ldr	r3, [r7, #28]
  800021a:	f1c3 0301 	rsb	r3, r3, #1
  800021e:	61fb      	str	r3, [r7, #28]
-    	  count = -1;
+      	  count = -1;
  8000220:	f04f 33ff 	mov.w	r3, #4294967295
  8000224:	613b      	str	r3, [r7, #16]
-      }
- 	  count++;
+        }
+   	  count++;
  8000226:	693b      	ldr	r3, [r7, #16]
  8000228:	3301      	adds	r3, #1
  800022a:	613b      	str	r3, [r7, #16]
-  	  HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, 1-red_state);
+        HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, 1-red_state);
  800022c:	e7a5      	b.n	800017a <main+0x2e>
  800022e:	bf00      	nop
  8000230:	40010800 	.word	0x40010800

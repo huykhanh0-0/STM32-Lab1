@@ -99,27 +99,29 @@ int main(void)
   int green_state = 0;
   int count = 0;
   while (1)
-    {
-        HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, 1-red_state);
-        HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, 1-yellow_state);
-        HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, 1-green_state);
-        HAL_Delay((red_dur*red_state + yellow_dur*yellow_state + green_dur*green_state)*1000);
-        if(count == 0){
-      	  red_state = 1 - red_state;
-      	  green_state = 1 - green_state;
-        }
-        else if(count == 1){
-      	  yellow_state = 1 - yellow_state;
-      	  green_state = 1 - green_state;
-        }
-        else{
-      	  yellow_state = 1 - yellow_state;
-      	  red_state = 1 - red_state;
-      	  count = -1;
-        }
-   	  count++;
-    }
+  {
+  	  HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, 1-red_state);
+      HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, 1-yellow_state);
+      HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, 1-green_state);
+      HAL_Delay((red_dur * red_state + yellow_dur * yellow_state + green_dur*green_state)*1000);
+      if(count == 0){
+    	  red_state = 1 - red_state;
+    	  yellow_state = 1 - yellow_state;
+      }
+      else if(count == 1){
+    	  yellow_state = 1 - yellow_state;
+    	  green_state = 1 - green_state;
+      }
+      else{
+    	  green_state = 1 - green_state;
+    	  red_state = 1 - red_state;
+    	  count = -1;
+      }
+ 	  count++;
+    /* USER CODE END WHILE */
 
+    /* USER CODE BEGIN 3 */
+  }
   /* USER CODE END 3 */
 }
 

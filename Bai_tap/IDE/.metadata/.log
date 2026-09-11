@@ -16,3 +16,61 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY org.eclipse.cdt.core 1 0 2026-09-09 12:45:22.228
 !MESSAGE Indexed 'STM32_project' (19 sources, 97 headers) in 2.36 sec: 6,763 declarations; 20,356 references; 2 unresolved inclusions; 36 syntax errors; 188 unresolved names (0.69%)
+!SESSION 2026-09-11 11:47:46.161 -----------------------------------------------
+eclipse.buildId=Version 1.7.0
+java.version=11.0.10
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.core.resources 2 10035 2026-09-11 11:47:49.411
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2026-09-11 11:47:56.955
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-09-11 11:47:57.022
+!MESSAGE Log4j initialized with config file D:\HuyKhanhGoc\STM32-Lab1\Bai_tap\IDE\.metadata\.log4j.xml
+
+!ENTRY org.eclipse.cdt.core 4 0 2026-09-11 11:48:03.195
+!MESSAGE Failed to open C/C++ index file D:\HuyKhanhGoc\STM32-Lab1\Bai_tap\IDE\.metadata\.plugins\org.eclipse.cdt.core\STM32_project.1788932719836.pdom - rebuilding the index
+!STACK 1
+org.eclipse.core.runtime.CoreException: Corrupted database: STM32_project.1788932719836.pdom
+	at org.eclipse.cdt.internal.core.pdom.db.Database.databaseCorruptionDetected(Database.java:323)
+	at org.eclipse.cdt.internal.core.pdom.db.Database.getChunk(Database.java:303)
+	at org.eclipse.cdt.internal.core.pdom.db.Database.getRecPtr(Database.java:518)
+	at org.eclipse.cdt.internal.core.pdom.dom.PDOMLinkage.getLinkageID(PDOMLinkage.java:140)
+	at org.eclipse.cdt.internal.core.pdom.PDOM.readLinkages(PDOM.java:476)
+	at org.eclipse.cdt.internal.core.pdom.PDOM.loadDatabase(PDOM.java:457)
+	at org.eclipse.cdt.internal.core.pdom.PDOM.<init>(PDOM.java:432)
+	at org.eclipse.cdt.internal.core.pdom.WritablePDOM.<init>(WritablePDOM.java:67)
+	at org.eclipse.cdt.internal.core.pdom.WritablePDOM.<init>(WritablePDOM.java:62)
+	at org.eclipse.cdt.internal.core.pdom.PDOMManager.getOrCreatePDOM(PDOMManager.java:391)
+	at org.eclipse.cdt.internal.core.pdom.PDOMManager.createIndexer(PDOMManager.java:592)
+	at org.eclipse.cdt.internal.core.pdom.PDOMSetupJob.run(PDOMSetupJob.java:61)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.cdt.core 4 0 2026-09-11 11:48:03.196
+!MESSAGE Corrupted database: STM32_project.1788932719836.pdom
+
+!ENTRY org.eclipse.cdt.core 4 0 2026-09-11 11:48:03.196
+!MESSAGE Error
+!STACK 1
+org.eclipse.core.runtime.CoreException: Corrupted database: STM32_project.1788932719836.pdom
+	at org.eclipse.cdt.internal.core.pdom.db.Database.databaseCorruptionDetected(Database.java:323)
+	at org.eclipse.cdt.internal.core.pdom.db.Database.getChunk(Database.java:303)
+	at org.eclipse.cdt.internal.core.pdom.db.Database.getRecPtr(Database.java:518)
+	at org.eclipse.cdt.internal.core.pdom.dom.PDOMLinkage.getLinkageID(PDOMLinkage.java:140)
+	at org.eclipse.cdt.internal.core.pdom.PDOM.readLinkages(PDOM.java:476)
+	at org.eclipse.cdt.internal.core.pdom.PDOM.loadDatabase(PDOM.java:457)
+	at org.eclipse.cdt.internal.core.pdom.PDOM.<init>(PDOM.java:432)
+	at org.eclipse.cdt.internal.core.pdom.WritablePDOM.<init>(WritablePDOM.java:67)
+	at org.eclipse.cdt.internal.core.pdom.WritablePDOM.<init>(WritablePDOM.java:62)
+	at org.eclipse.cdt.internal.core.pdom.PDOMManager.getOrCreatePDOM(PDOMManager.java:399)
+	at org.eclipse.cdt.internal.core.pdom.PDOMManager.createIndexer(PDOMManager.java:592)
+	at org.eclipse.cdt.internal.core.pdom.PDOMSetupJob.run(PDOMSetupJob.java:61)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.cdt.core 4 0 2026-09-11 11:48:03.197
+!MESSAGE Corrupted database: STM32_project.1788932719836.pdom
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-09-11 11:48:03.266
+!MESSAGE Started RMI Server, listening on port 41337
